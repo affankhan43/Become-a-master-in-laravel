@@ -12,7 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
-// Start lecture 4
+
+/* --- Lecture 4: Routes --- */
+	Route::get('/contact', function () {
+		return "Contact Here ....";
+	});
+
+	Route::get('/post/{id}/{name}', function ($id, $name) {
+		return "This Post Number: ".$id. " ".$name;
+	});
+
+	// Naming Routes
+	Route::get('/admin/posts/example', array('as'=>'admin.home', function () {
+		$url = route('admin.home');
+		return "Url is: ".$url;
+	}));
+/* --- Lecture 4: Routes End--- */
+
